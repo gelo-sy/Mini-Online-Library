@@ -1,0 +1,241 @@
+/* navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #662222, #842A3B, #A3485A);
+  padding: 14px 32px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-icon {
+  font-size: 1rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.navbar a:hover {
+  color: #FFD4D4; 
+}
+
+.welcome {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.logout-btn {
+  background: #fff;
+  color: #842A3B;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.logout-btn:hover {
+  background: #FFD4D4;
+  color: #662222;
+  transform: scale(1.05);
+}
+
+/* login and register */
+form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+form h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #842A3B;
+}
+
+form input, form textarea {
+  width: 90%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: 1px solid #662222;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+form textarea{
+  height: 100px;
+}
+
+form input::placeholder {
+  color: #333;
+}
+
+form input:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+form button {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #842A3B;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+form input, form button {
+  transition: all 0.3s ease;
+}
+
+/* book lists */
+.book-list {
+  margin: 10px auto;
+  max-width: 1000px;
+  border-radius: 5px;
+  padding: 24px 32px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.book-list h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #662222;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.no-books {
+  text-align: center;
+  color: #662222;
+  font-size: 1rem;
+}
+
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.book-table thead {
+  background: #842A3B;
+  color: #fff;
+}
+
+.book-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.book-table td {
+  padding: 12px 16px;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.book-table tr:nth-child(even) {
+  background: #f7e5e5;
+}
+
+.book-table tr:hover {
+  background: #f0c0c0;
+  transition: 0.3s;
+}
+
+.book-table .title {
+  font-weight: 600;
+  color: #662222;
+}
+
+.book-table .author {
+  font-style: italic;
+  color: #842A3B;
+}
+
+.book-table .desc {
+  color: #A3485A;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .logout-btn {
+    align-self: flex-start;
+  }
+}
