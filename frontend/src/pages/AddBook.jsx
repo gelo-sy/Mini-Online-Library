@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 
 export default function AddBook(){
   const [form, setForm] = useState({ title:'', author:'', description:'' });
-  const nav = useNavigate();
+  const navigate = useNavigate();
 
   const submit = async (e) => {
     e.preventDefault();
     try {
       await API.post('/books', form);
       alert('Added');
-      nav('/');
+      navigate('/books');
     } catch (err) {
       alert(err.response?.data?.message || 'Error');
     }

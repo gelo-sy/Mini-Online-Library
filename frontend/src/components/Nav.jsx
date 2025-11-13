@@ -1,17 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaBook, FaSignInAlt, FaUserPlus, FaPlus, FaSignOutAlt, FaHome } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaBookOpen, FaSignInAlt, FaUserPlus, FaPlus, FaSignOutAlt, FaHome } from 'react-icons/fa';
 
 export default function Nav({ user, onLogout }) {
+  const navigate = useNavigate();
+  
   return (
     <nav className="navbar">
       <div className="nav-left">
         <Link to="/" className="nav-logo">
-          <FaBook className="nav-icon" /> Mini Library
+          <FaBookOpen className="nav-icon" /> Mini Library
         </Link>
-        <Link to="/">
-          <FaHome className="nav-icon" /> Books
-        </Link>
+
+        {/* Show Books link only if user is logged in */}
+        {user && (
+          <Link to="/books">
+            <FaHome className="nav-icon" /> Books
+          </Link>
+        )}
+
+        {/* Admin only */}
         {user?.role === 'admin' && (
           <Link to="/add">
             <FaPlus className="nav-icon" /> Add Book
@@ -22,7 +30,7 @@ export default function Nav({ user, onLogout }) {
       <div className="nav-right">
         {!user && (
           <>
-            <Link to="/login">
+            <Link to="/">
               <FaSignInAlt className="nav-icon" /> Login
             </Link>
             <Link to="/register">
