@@ -6,6 +6,10 @@ export default function Login({ onAuth }){
   const [form, setForm] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
+// existing acc po from DB
+// username: gelo_admin@gmail.com
+// password: me_admin
+
   const submit = async e => {
     e.preventDefault();
     try {
